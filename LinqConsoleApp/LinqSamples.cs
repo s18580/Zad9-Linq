@@ -261,7 +261,17 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad5()
         {
+            var res = from emp in Emps
+                      select new
+                      {
+                          Nazwisko = emp.Ename,
+                          Praca = emp.Job
+                      };
 
+            foreach (var re in res)
+            {
+                Console.WriteLine(re);
+            }
         }
 
         /// <summary>
