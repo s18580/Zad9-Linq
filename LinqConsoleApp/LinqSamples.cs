@@ -226,8 +226,15 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad2()
         {
-            
+            var res = from emp in Emps
+                      where emp.Job == "Frontend programmer" && emp.Salary > 1000
+                      orderby emp.Ename descending
+                      select emp;
 
+            foreach (var re in res)
+            {
+                Console.WriteLine(re);
+            }
         }
 
         /// <summary>
