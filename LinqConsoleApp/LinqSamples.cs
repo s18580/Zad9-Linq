@@ -287,6 +287,19 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad6()
         {
+            var res = Emps
+                    .Join(Depts, emp => emp.Deptno, dept => dept.Deptno, (emp, dept)
+                    => new
+                    {
+                        emp.Ename,
+                        emp.Job,
+                        dept.Dname
+                    });
+
+            foreach (var re in res)
+            {
+                Console.WriteLine(re);
+            }
 
         }
 
