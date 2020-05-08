@@ -308,7 +308,7 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad7()
         {
-
+            
         }
 
         /// <summary>
@@ -317,7 +317,9 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad8()
         {
+            var res = Emps.Any(emp => emp.Job== "Backend programmer");
 
+            Console.WriteLine(res);
         }
 
         /// <summary>
