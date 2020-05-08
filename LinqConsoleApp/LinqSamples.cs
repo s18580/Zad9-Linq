@@ -328,7 +328,10 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad9()
         {
-
+            var res = Emps
+                    .Where(emp => emp.Job== "Frontend programmer")
+                    .OrderByDescending(emp => emp.HireDate)
+                    .First(); 
         }
 
         /// <summary>
