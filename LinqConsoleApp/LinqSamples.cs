@@ -253,7 +253,13 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad4()
         {
+            var res = Emps
+                        .Where(x => x.Salary == Emps.Max(emp => emp.Salary));
 
+            foreach (var re in res)
+            {
+                Console.WriteLine(re);
+            }
         }
 
         /// <summary>
