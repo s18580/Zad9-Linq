@@ -179,11 +179,7 @@ namespace LinqConsoleApp
             Celem ćwiczenia jest uzupełnienie poniższych metod.
          *  Każda metoda powinna zawierać kod C#, który z pomocą LINQ'a będzie realizować
          *  zapytania opisane za pomocą SQL'a.
-         *  Rezultat zapytania powinien zostać wyświetlony za pomocą kontrolki DataGrid.
-         *  W tym celu końcowy wynik należy rzutować do Listy (metoda ToList()).
-         *  Jeśli dane zapytanie zwraca pojedynczy wynik możemy je wyświetlić w kontrolce
-         *  TextBox WynikTextBox.
-        */
+         */
 
         /// <summary>
         /// SELECT * FROM Emps WHERE Job = "Backend programmer";
@@ -205,8 +201,24 @@ namespace LinqConsoleApp
                           Zawod = emp.Job
                       };
 
+            foreach (var re in res)
+            {
+                Console.WriteLine(re);
+            }
+
 
             //2. Lambda and Extension methods
+            var res2 = Emps.Where(x => x.Job == "Backend programmer");
+            //var res2 = Emps.Where(x => x.Job == "Backend programmer").Select(x => new
+            //{
+            //    Nazwisko = x.Ename,
+            //    Zawod = x.Job   
+            //});
+
+            foreach (var re2 in res2)
+            {
+                Console.WriteLine(re2);
+            }
         }
 
         /// <summary>
