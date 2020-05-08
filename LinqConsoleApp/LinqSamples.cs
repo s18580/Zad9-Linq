@@ -235,7 +235,10 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad3()
         {
-          
+            var res = (from Emp in Emps
+                       select Emp.Salary).Max();
+
+            Console.WriteLine(res);
         }
 
         /// <summary>
