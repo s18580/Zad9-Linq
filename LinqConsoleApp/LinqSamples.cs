@@ -341,7 +341,12 @@ namespace LinqConsoleApp
         /// </summary>
         public void Przyklad10Button_Click()
         {
-
+            var res = Emps.Select(emp => new
+            {
+                emp.Ename,
+                emp.Job,
+                emp.HireDate
+            }).Union();
         }
 
         //Znajdź pracownika z najwyższą pensją wykorzystując metodę Aggregate()
